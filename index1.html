@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Grid with Navbar</title>
+    <style>
+        /* Basic styles for the navbar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-item {
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            color: #ffeb3b; /* Highlight color on hover */
+        }
+
+        /* Styles for the video grid */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* More flexible column width */
+            gap: 10px; /* Reduced gap */
+            padding: 10px; /* Reduced padding */
+        }
+
+        .video-item {
+            width: 100%; /* Make width 100% of grid column */
+            height: 150px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-item:hover {
+            transform: scale(1.05);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-title {
+            padding: 5px;
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            text-align: left;
+            height: 30px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            .video-item {
+                height: 100px; /* Adjust height proportionally */
+            }
+
+            .video-thumbnail img {
+                height: 100%; /* Ensure the image fits the new height */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item" id="home">Home</li>
+            <li class="nav-item" id="movies">Movies</li>
+            <li class="nav-item" id="tvshows">TV Shows</li>
+            <li class="nav-item" id="more">More</li>
+        </ul>
+    </nav>
+
+    <!-- Video Grid -->
+    <div class="video-container">
+        <div class="video-item">
+            <div class="video-thumbnail">
+                <img src="https://via.placeholder.com/250x150" alt="Video 1">
+            </div>
+            <div class="video-title">Video Title 1</div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumbnail">
+                <img src="https://via.placeholder.com/250x150" alt="Video 2">
+            </div>
+            <div class="video-title">Video Title 2</div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumbnail">
+                <img src="https://via.placeholder.com/250x150" alt="Video 3">
+            </div>
+            <div class="video-title">Video Title 3</div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumbnail">
+                <img src="https://via.placeholder.com/250x150" alt="Video 4">
+            </div>
+            <div class="video-title">Video Title 4</div>
+        </div>
+        <!-- Add more video items as needed -->
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript code for other functionalities can go here if needed.
+    </script>
+</body>
+</html>
