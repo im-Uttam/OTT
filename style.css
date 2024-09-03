@@ -144,12 +144,36 @@ nav {
     border-radius: 8px;
 }
 
-/* Video Grid */
+/* Video wala row */
 .video-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    /* padding: 20px; */
+    grid-template-columns: repeat(2, 1fr); /* Default: 2 videos per row */
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0 10px;
+}
+
+/* Media query for screens 768px and larger */
+@media (min-width: 768px) {
+    .video-container {
+        grid-template-columns: repeat(3, 1fr); /* Increase to 3 videos per row */
+    }
+}
+
+/* Media query for screens 1024px and larger */
+@media (min-width: 1024px) {
+    .video-container {
+        grid-template-columns: repeat(4, 1fr); /* Increase to 4 videos per row */
+    }
+}
+
+/* Media query for screens 375px and smaller */
+@media (max-width: 375px) {
+    .video-container {
+        grid-template-columns: 1fr; /* Only 1 video per row */
+    }
 }
 
 .video-item {
@@ -161,11 +185,11 @@ nav {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9; /* didn't know why not working */
 }
 
 .video-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .video-thumbnail {
@@ -302,7 +326,7 @@ nav {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
+    left: -250px;
     width: 250px;
     height: 100%;
     background-color: #333;
